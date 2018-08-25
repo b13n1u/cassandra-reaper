@@ -217,7 +217,6 @@ public final class RepairRunnerTest {
             return jmx;
           }
         };
-
     context.repairManager.startRepairRun(run);
     await().with().atMost(20, TimeUnit.SECONDS).until(() -> {
       try {
@@ -301,7 +300,6 @@ public final class RepairRunnerTest {
               throw new AssertionError(ex);
             }
             JmxProxyTest.mockGetEndpointSnitchInfoMBean(jmx, endpointSnitchInfoMBean);
-
             when(jmx.triggerRepair(
                     any(BigInteger.class),
                     any(BigInteger.class),
@@ -522,6 +520,9 @@ public final class RepairRunnerTest {
             return jmx;
           }
         };
+    ClusterFacade clusterProxy = ClusterFacade.create(context);
+    ClusterFacade clusterProxySpy = Mockito.spy(clusterProxy);
+    Mockito.doReturn(Collections.singletonList("")).when(clusterProxySpy).tokenRangeToEndpoint(any(), any(), any());
 
     assertEquals(RepairRun.RunState.NOT_STARTED, storage.getRepairRun(RUN_ID).get().getRunState());
     context.repairManager.resumeRunningRepairRuns();
