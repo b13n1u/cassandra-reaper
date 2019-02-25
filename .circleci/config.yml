@@ -194,13 +194,13 @@ jobs:
       environment:
         CASSANDRA_VERSION: 2.1.20
         CUCUMBER_OPTIONS: "-t ~@all_nodes_reachable"
-        JOB_COMMAND: mvn -B -DsurefireArgLine="-Xmx384m" resources:testResources surefire:test -Pintegration-upgrade-tests -Dtest=ReaperCassandraIT
+        JOB_COMMAND: mvn -B -DargLine="-Xmx384m -verbose:class" resources:testResources surefire:test -Pintegration-upgrade-tests -Dtest=ReaperCassandraIT
       <<: *default_job
     c_2-1_upgrades__all_nodes_reachable:
       environment:
         CASSANDRA_VERSION: 2.1.20
         CUCUMBER_OPTIONS: "-t @all_nodes_reachable"
-        JOB_COMMAND: mvn -B -DsurefireArgLine="-Xmx384m" resources:testResources surefire:test -Pintegration-upgrade-tests -Dtest=ReaperCassandraIT
+        JOB_COMMAND: mvn -B -DargLine="-Xmx384m -verbose:class" resources:testResources surefire:test -Pintegration-upgrade-tests -Dtest=ReaperCassandraIT
       <<: *default_job
     c_2-2_memory:
       environment:
@@ -246,13 +246,13 @@ jobs:
       environment:
         CASSANDRA_VERSION: 2.2.13
         CUCUMBER_OPTIONS: "-t ~@all_nodes_reachable"
-        JOB_COMMAND: mvn -B -DsurefireArgLine="-Xmx384m" resources:testResources surefire:test -Pintegration-upgrade-tests -Dtest=ReaperCassandraIT
+        JOB_COMMAND: mvn -B -DargLine="-Xmx384m -verbose:class" resources:testResources surefire:test -Pintegration-upgrade-tests -Dtest=ReaperCassandraIT
       <<: *default_job
     c_2-2_upgrades__all_nodes_reachable:
       environment:
         CASSANDRA_VERSION: 2.2.13
         CUCUMBER_OPTIONS: "-t @all_nodes_reachable"
-        JOB_COMMAND: mvn -B -DsurefireArgLine="-Xmx384m" resources:testResources surefire:test -Pintegration-upgrade-tests -Dtest=ReaperCassandraIT
+        JOB_COMMAND: mvn -B -DargLine="-Xmx384m -verbose:class" resources:testResources surefire:test -Pintegration-upgrade-tests -Dtest=ReaperCassandraIT
       <<: *default_job
     c_3-0_memory:
       environment:
@@ -298,13 +298,13 @@ jobs:
       environment:
         CASSANDRA_VERSION: 3.0.17
         CUCUMBER_OPTIONS: "-t ~@all_nodes_reachable"
-        JOB_COMMAND: mvn -B -DsurefireArgLine="-Xmx384m" resources:testResources surefire:test -Pintegration-upgrade-tests -Dtest=ReaperCassandraIT
+        JOB_COMMAND: mvn -B -DargLine="-Xmx384m -verbose:class" resources:testResources surefire:test -Pintegration-upgrade-tests -Dtest=ReaperCassandraIT
       <<: *default_job
     c_3-0_upgrades__all_nodes_reachable:
       environment:
         CASSANDRA_VERSION: 3.0.17
         CUCUMBER_OPTIONS: "-t @all_nodes_reachable"
-        JOB_COMMAND: mvn -B -DsurefireArgLine="-Xmx384m" resources:testResources surefire:test -Pintegration-upgrade-tests -Dtest=ReaperCassandraIT
+        JOB_COMMAND: mvn -B -DargLine="-Xmx384m -verbose:class" resources:testResources surefire:test -Pintegration-upgrade-tests -Dtest=ReaperCassandraIT
       <<: *default_job
     c_3-11_memory:
       environment:
@@ -350,13 +350,13 @@ jobs:
       environment:
         CASSANDRA_VERSION: 3.11.3
         CUCUMBER_OPTIONS: "-t ~@all_nodes_reachable"
-        JOB_COMMAND: mvn -B -DsurefireArgLine="-Xmx384m" resources:testResources surefire:test -Pintegration-upgrade-tests -Dtest=ReaperCassandraIT
+        JOB_COMMAND: mvn -B -DargLine="-Xmx384m -verbose:class" resources:testResources surefire:test -Pintegration-upgrade-tests -Dtest=ReaperCassandraIT
       <<: *default_job
     c_3-11_upgrades__all_nodes_reachable:
       environment:
         CASSANDRA_VERSION: 3.11.3
         CUCUMBER_OPTIONS: "-t @all_nodes_reachable"
-        JOB_COMMAND: mvn -B -DsurefireArgLine="-Xmx384m" resources:testResources surefire:test -Pintegration-upgrade-tests -Dtest=ReaperCassandraIT
+        JOB_COMMAND: mvn -B -DargLine="-Xmx384m -verbose:class" resources:testResources surefire:test -Pintegration-upgrade-tests -Dtest=ReaperCassandraIT
       <<: *default_job
     c_4-0_memory:
       environment:
@@ -402,13 +402,13 @@ jobs:
       environment:
         CASSANDRA_VERSION: git:trunk
         CUCUMBER_OPTIONS: "-t ~@all_nodes_reachable"
-        JOB_COMMAND: mvn -B -DsurefireArgLine="-Xmx384m" resources:testResources surefire:test -Pintegration-upgrade-tests -Dtest=ReaperCassandraIT
+        JOB_COMMAND: mvn -B -DargLine="-Xmx384m -verbose:class" resources:testResources surefire:test -Pintegration-upgrade-tests -Dtest=ReaperCassandraIT
       <<: *default_job
     c_4-0_upgrades__all_nodes_reachable:
       environment:
         CASSANDRA_VERSION: git:trunk
         CUCUMBER_OPTIONS: "-t @all_nodes_reachable"
-        JOB_COMMAND: mvn -B -DsurefireArgLine="-Xmx384m" resources:testResources surefire:test -Pintegration-upgrade-tests -Dtest=ReaperCassandraIT
+        JOB_COMMAND: mvn -B -DargLine="-Xmx384m -verbose:class" resources:testResources surefire:test -Pintegration-upgrade-tests -Dtest=ReaperCassandraIT
       <<: *default_job
 workflows:
   version: 2
