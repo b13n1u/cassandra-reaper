@@ -105,7 +105,6 @@ import systems.composable.dropwizard.cassandra.retry.RetryPolicyFactory;
 
 public final class CassandraStorage implements IStorage, IDistributedStorage {
 
-  private static final int LEAD_DURATION = 600;
   /* Simple stmts */
   private static final String SELECT_CLUSTER = "SELECT * FROM cluster";
   private static final String SELECT_REPAIR_SCHEDULE = "SELECT * FROM repair_schedule_v1";
@@ -1282,7 +1281,6 @@ public final class CassandraStorage implements IStorage, IDistributedStorage {
   private boolean hasLeadOnSegment(UUID leaderId) {
     ResultSet lwtResult = session.execute(
         renewLeadPrepStmt.bind(
-            LEAD_DURATION,
             AppContext.REAPER_INSTANCE_ID,
             AppContext.REAPER_INSTANCE_ADDRESS,
             leaderId,
